@@ -15,9 +15,8 @@
 
 # Dependencies
 
-**TODO: adapt this section**
-
 - `bash`, `curl`, `tar`: generic POSIX utilities.
+- `java`: can be installed from asdf-java plugin
 - `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
 
 # Install
@@ -43,7 +42,7 @@ asdf install antlr4 latest
 asdf global antlr4 latest
 
 # Now antlr4 commands are available
-java -jar /usr/local/lib/$ANTLR_JAR
+java org.antlr.v4.Tool
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to

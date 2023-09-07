@@ -16,7 +16,11 @@ jobs:
           - macos-latest
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Use Java 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
       - name: asdf_plugin_test
         uses: asdf-vm/actions/plugin-test@v2
         with:
-          command: java -jar /usr/local/lib/$ANTLR_JAR
+          command: java org.antlr.v4.Tool

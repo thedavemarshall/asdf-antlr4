@@ -5,7 +5,7 @@ set -euo pipefail
 # TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for antlr4.
 GH_REPO="https://github.com/antlr/antlr4"
 TOOL_NAME="antlr4"
-TOOL_TEST="java -jar /usr/local/lib/$ANTLR_JAR"
+TOOL_TEST="java org.antlr.v4.Tool"
 
 fail() {
 	echo -e "asdf-$TOOL_NAME: $*"
@@ -42,7 +42,7 @@ download_release() {
 	filename="$2"
 
 	# TODO: Adapt the release URL convention for antlr4
-	url="$GH_REPO/archive/v${version}.tar.gz"
+	url="$GH_REPO/archive/refs/tags/${version}.tar.gz"
 
 	echo "* Downloading $TOOL_NAME release $version..."
 	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
