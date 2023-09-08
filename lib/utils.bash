@@ -5,7 +5,7 @@ set -euo pipefail
 # TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for antlr4.
 GH_REPO="https://github.com/antlr/antlr4"
 TOOL_NAME="antlr4"
-TOOL_TEST="bin/antlr4"
+TOOL_TEST="antlr4"
 
 fail() {
 	echo -e "asdf-$TOOL_NAME: $*"
