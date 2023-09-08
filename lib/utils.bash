@@ -5,7 +5,6 @@ set -euo pipefail
 # TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for antlr4.
 GH_REPO="https://github.com/antlr/antlr4"
 TOOL_NAME="antlr4"
-TOOL_TEST="antlr4"
 
 fail() {
 	echo -e "asdf-$TOOL_NAME: $*"
@@ -59,12 +58,9 @@ install_version() {
 
 	(
 		mkdir -p "$install_path"
-		chmod +x "$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
 		cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
-		local tool_cmd
-		tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
-		test -x "$install_path/$tool_cmd" || fail "Expected $install_path/$tool_cmd to be executable."
+		test -x "java -jar $install_path/antlr-$version-complete.jar" || fail "Expected $install_path/antlr-$version-complete.jar to be jar."
 
 		echo "$TOOL_NAME $version installation was successful!"
 	) || (
