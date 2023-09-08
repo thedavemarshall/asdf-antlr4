@@ -6,4 +6,4 @@ if ! command -v java &> /dev/null; then
     exit 1
 fi
 
-java org.antlr.v4.Tool
+java org.antlr.v4.Tool "$@"

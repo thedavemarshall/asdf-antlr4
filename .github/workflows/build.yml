@@ -27,4 +27,4 @@ jobs:
       - name: asdf_plugin_test
         uses: asdf-vm/actions/plugin-test@v2
         with:
-          command: test-java-antlr
+          command: antlr4

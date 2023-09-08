@@ -41,8 +41,8 @@ asdf install antlr4 latest
 # Set a version globally (on your ~/.tool-versions file)
 asdf global antlr4 latest
 
-# Now antlr4 commands are available
-java org.antlr.v4.Tool
+# Now antlr4 commands are available, `antlr4` being equivalent to calling `java org.antlr.v4.Tool`
+antlr4 
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
